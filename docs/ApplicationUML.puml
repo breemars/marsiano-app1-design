@@ -1,11 +1,102 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 
-autonumber
+List <|-- Task
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+class Application{
+'attributes
+    - lists : ArrayList<List>
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+'methods
+    +start(Stage stage)
+    +addList()
+    +deleteList()
+}
+
+class List{
+'attributes
+    - progress : double
+    - totalCompTasks : int
+    - name : String
+    - tasks : ArrayList<Task>
+
+'methods
+    +List(String name)
+    +addTask(String name, String desc, String date, boolean status)
+    +removeTask(String name)
+    +updateProgressBarAdd()
+    +updateProgressBarMinus()
+    +setTitle(String name)
+    +getTitle() : String
+
+}
+
+class Task {
+'attributes
+    - name : String
+    - desc : String
+    - date : String
+    - status : boolean
+
+'methods
+    +Task(String name, String desc, String date, boolean status)
+    +setName()
+    +void setDesc()
+    +setDate()
+    +setStatus()
+    +getName() : String
+    +getDesc() : String
+    +getDate() : String
+    +getStatus() : boolean
+}
+
+class ApplicationController{
+'attributes
+    -modeList : int
+    -modeTask : int
+
+'methods
+    -listSelected(ActionEvent event)
+    -taskSelected(ActionEvent event)
+    -openLists(ActionEvent event)
+    -downloadLists(ActionEvent event)
+    -newList(ActionEvent event)
+    -newTask(ActionEvent event)
+    -showAll(ActionEvent event)
+    -showCompleted(ActionEvent event)
+    -showUncompleted(ActionEvent event)
+    -deleteListMode(ActionEvent event)
+    -deleteTaskMode(ActionEvent event)
+    -editTaskMode(ActionEvent event)
+    -editListMode(ActionEvent event)
+
+}
+
+class DeletePopUpController{
+    -cancel(ActionEvent event)
+    -delete(ActionEvent event)
+}
+
+class DownloadPopUpController{
+    -cancel(ActionEvent event)
+    -selectedAdd(ActionEvent event)
+    -selectedDelete(ActionEvent event)
+    -download(ActionEvent event)
+}
+
+class EditPopUpController{
+    -cancel(ActionEvent event)
+    -edit(ActionEvent event)
+}
+
+class NewListPopUpController{
+    -cancel(ActionEvent event)
+    -newList(ActionEvent event)
+}
+
+class NewTaskPopUpController{
+    -cancel(ActionEvent event)
+    -newTask(ActionEvent event)
+}
+
+
 @enduml

@@ -34,13 +34,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.effect.ColorAdjust?>
@@ -51,24 +50,20 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <MenuBar style="-fx-background-color: white;" VBox.vgrow="NEVER">
+    <MenuBar style="-fx-background-color: lightgrey;" VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" text="Open List" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Open Lists" />
+            <MenuItem mnemonicParsing="false" text="Download Lists" />
           </items>
         </Menu>
             <Menu mnemonicParsing="false" text="Show">
                <items>
                   <MenuItem mnemonicParsing="false" text="All Tasks" />
-                  <MenuItem mnemonicParsing="false" text="Incompleted Tasks" />
+                  <MenuItem mnemonicParsing="false" text="Uncompleted Tasks" />
                   <MenuItem mnemonicParsing="false" text="Completed Tasks" />
                </items>
             </Menu>
@@ -92,24 +87,34 @@
             </Menu>
       </menus>
     </MenuBar>
-      <TabPane prefHeight="553.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab style="-fx-background-color: white; -fx-font-size: 15px; -fx-font-family: Corbel;" text="Task List Name">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: white; -fx-border-width: 0px; -fx-background-color: white;">
-                     <children>
-                        <TreeTableView cacheShape="false" layoutX="55.0" layoutY="20.0" prefHeight="475.0" prefWidth="789.0" showRoot="false" style="-fx-background-color: white; -fx-border-color: white; -fx-font-size: 20px; -fx-font-family: Corbel;" stylesheets="@style.css" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="15.0">
-                          <columns>
-                            <TreeTableColumn prefWidth="516.0000228881836" text="Tasks" />
-                            <TreeTableColumn minWidth="0.0" prefWidth="277.60003662109375" resizable="false" text="Due Date  " />
-                          </columns>
-                        </TreeTableView>
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
+      <HBox prefHeight="551.0" prefWidth="900.0">
+         <children>
+            <VBox prefHeight="551.0" prefWidth="262.0" style="-fx-background-color: white;">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="222.0" text="Lists" textAlignment="CENTER" textFill="#999999">
+                     <VBox.margin>
+                        <Insets left="9.0" top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Corbel" size="20.0" />
+                     </font>
+                  </Label>
+                  <ListView prefHeight="506.0" prefWidth="174.0" style="-fx-border-color: white; -fx-background-color: white;" />
+               </children>
+            </VBox>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="551.0" prefWidth="815.0" style="-fx-border-color: white; -fx-border-width: 0px; -fx-background-color: white;">
+               <children>
+                  <TreeTableView cacheShape="false" layoutX="45.0" layoutY="9.0" prefHeight="520.0" prefWidth="637.0" showRoot="false" style="-fx-background-color: white; -fx-border-color: white; -fx-font-size: 20px; -fx-font-family: Corbel;" stylesheets="@style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="20.0">
+                    <columns>
+                      <TreeTableColumn prefWidth="428.8000717163086" text="Tasks" />
+                      <TreeTableColumn minWidth="0.0" prefWidth="204.80001831054688" resizable="false" text="Due Date  " />
+                    </columns>
+                  </TreeTableView>
+                  <Separator layoutY="18.0" orientation="VERTICAL" prefHeight="510.0" prefWidth="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
     <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
       <children>
         <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Status: Saved/Delete Mode/Edit Mode" HBox.hgrow="ALWAYS">

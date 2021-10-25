@@ -8,10 +8,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 
 public class Application extends javafx.application.Application {
+    ArrayList<List> lists; //stores the user's lists
+
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Application.fxml")));
 
@@ -21,7 +24,15 @@ public class Application extends javafx.application.Application {
         stage.show(); // display the stage
     }
 
+    //Will create another array list of Lists as well
     public static void main(String[] args) {
         launch(args);
     }
+
+
+    //adds a list to arraylist
+    void addList(){}
+
+    //deletes a list from arraylist
+    void deleteList(){}
 }
