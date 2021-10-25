@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Fall 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Breanna Marsiano
+ */
+
 package PopUps;
 
 import javafx.event.ActionEvent;
@@ -8,13 +13,14 @@ public class DeletePopUpController {
     //@FXML
     //private type name;
 
-    //discard all changes and close popup
+    //discards all changes and closes popup
     @FXML
     private void cancel(ActionEvent event) {
 
     }
 
-    //delete whatever was selected from tasklist or listlist
+    //delete whatever was selected from the tasks list or the lists of lists
+    //based on if the user selected Delete Task or Delete List
     @FXML
     private void delete(ActionEvent event) {
 

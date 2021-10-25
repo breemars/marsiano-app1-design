@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Fall 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Breanna Marsiano
+ */
+
 package PopUps;
 
 import javafx.event.ActionEvent;
@@ -8,13 +13,13 @@ public class EditPopUpController {
     //@FXML
     //private type name;
 
-    //discard all changes
+    //discards all changes and closes popup
     @FXML
     private void cancel(ActionEvent event) {
 
     }
 
-    //rename whatever was selected with the new String
+    //rename whatever was selected (List Name or task) with the new String
     @FXML
     private void edit(ActionEvent event) {
 

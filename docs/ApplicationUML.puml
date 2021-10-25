@@ -72,11 +72,13 @@ class ApplicationController{
 }
 
 class DeletePopUpController{
+'methods
     -cancel(ActionEvent event)
     -delete(ActionEvent event)
 }
 
 class DownloadPopUpController{
+'methods
     -cancel(ActionEvent event)
     -selectedAdd(ActionEvent event)
     -selectedDelete(ActionEvent event)
@@ -84,16 +86,19 @@ class DownloadPopUpController{
 }
 
 class EditPopUpController{
+'methods
     -cancel(ActionEvent event)
     -edit(ActionEvent event)
 }
 
 class NewListPopUpController{
+'methods
     -cancel(ActionEvent event)
     -newList(ActionEvent event)
 }
 
 class NewTaskPopUpController{
+'methods
     -cancel(ActionEvent event)
     -newTask(ActionEvent event)
 }

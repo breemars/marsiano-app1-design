@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Fall 2021 Application Assignment 1 Solution
+ *  Copyright 2021 Breanna Marsiano
+ */
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -17,7 +22,7 @@ public class ApplicationController {
 
     }
 
-    //Mark completed/incompleted (& update progress bar)
+    //Mark completed/uncompleted (& update progress bar)
     //If edit mode on - open pop up and prompt for new String
     //If delete mode on - open pop up and ask for confirmation
     @FXML
@@ -48,11 +53,11 @@ public class ApplicationController {
     @FXML
     private void showAll(ActionEvent event) {}
 
-    //repopulates the chart with completed data
+    //repopulates the chart with completed data/tasks with status "true"
     @FXML
     private void showCompleted(ActionEvent event) {}
 
-    //repopulates the chart with uncompleted data
+    //repopulates the chart with uncompleted data/tasks with status "false"
     @FXML
     private void showUncompleted(ActionEvent event) {}
 

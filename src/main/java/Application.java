@@ -24,15 +24,14 @@ public class Application extends javafx.application.Application {
         stage.show(); // display the stage
     }
 
-    //Will create another array list of Lists as well
+    //Will an array list of Lists as well
     public static void main(String[] args) {
         launch(args);
     }
 
-
-    //adds a list to arraylist
+    //adds a list to Lists arraylist
     void addList(){}
 
-    //deletes a list from arraylist
+    //deletes a list from Lists arraylist
     void deleteList(){}
 }
